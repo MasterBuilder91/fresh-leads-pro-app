@@ -1,60 +1,111 @@
-# Next.js Framework Starter
+# Fresh Leads Pro - README
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/fresh-leads-pro-app)
+## Project Overview
 
-<!-- dash-content-start -->
+Fresh Leads Pro is a SaaS web application designed to provide small service businesses (plumbers, landscapers, electricians, cleaners, etc.) with fast, easy access to updated local leads. The application gathers publicly available data from various sources and organizes it by category, helping service businesses find fresh opportunities.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's deployed on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+## Features
 
-<!-- dash-content-end -->
+- **Clean Dashboard**: User-friendly interface for subscribers
+- **Lead Management**: Browse, search, and filter leads by various criteria
+- **Lead Categories**: Organized by customer type (homeowner, church, business, etc.)
+- **Geographic Filtering**: Filter leads by city and state
+- **Data Export**: Download lead lists as CSV files
+- **Subscription System**: Weekly or monthly payment plans
+- **Admin Dashboard**: Manage scraping and user accounts
+- **Web Scraper Module**: Ethically collect data from public sources
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+## Technology Stack
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/fresh-leads-pro-app
+### Frontend
+- Next.js (React framework)
+- Tailwind CSS for styling
+- React Context API for state management
+- Responsive design for mobile/desktop compatibility
+
+### Backend
+- Next.js API Routes
+- NextAuth.js for authentication
+- Cloudflare D1 (SQLite-compatible) database
+- Cloudflare Workers for serverless functions
+
+### Deployment
+- Cloudflare Pages for hosting
+- Cloudflare D1 for database
+- Cloudflare Workers for background tasks
+
+## Project Structure
+
 ```
-
-A live public deployment of this template is available at [https://fresh-leads-pro-app.templates.workers.dev](https://fresh-leads-pro-app.templates.workers.dev)
+fresh-leads-pro/
+├── migrations/              # Database migration files
+│   └── 0001_initial.sql     # Initial database schema
+├── src/
+│   ├── app/                 # Next.js pages and API routes
+│   │   ├── api/             # Backend API endpoints
+│   │   ├── auth/            # Authentication pages
+│   │   ├── dashboard/       # Dashboard pages
+│   │   ├── leads/           # Lead browsing pages
+│   │   ├── account/         # Account management pages
+│   │   └── admin/           # Admin pages
+│   ├── components/          # Reusable React components
+│   │   └── layout/          # Layout components
+│   ├── lib/                 # Utility functions and business logic
+│   │   ├── api/             # API functions
+│   │   ├── auth.ts          # Authentication utilities
+│   │   ├── database.ts      # Database wrapper
+│   │   ├── scraper/         # Web scraping module
+│   │   ├── payment/         # Payment processing
+│   │   ├── test/            # Testing utilities
+│   │   └── deploy/          # Deployment utilities
+│   └── hooks/               # Custom React hooks
+├── public/                  # Static assets
+├── DEPLOYMENT.md            # Deployment instructions
+└── USER_GUIDE.md            # User documentation
+```
 
 ## Getting Started
 
-First, run:
+### Development Setup
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up local database:
+   ```
+   wrangler d1 execute DB --local --file=migrations/0001_initial.sql
+   ```
+4. Start the development server:
+   ```
+   npm run dev
+   ```
 
-Then run the development server (using the package manager of your choice):
+### Deployment
 
-```bash
-npm run dev
-```
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Documentation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [User Guide](USER_GUIDE.md): Instructions for end users
+- [Deployment Guide](DEPLOYMENT.md): Instructions for deploying the application
+- [Architecture Document](fresh-leads-pro-architecture.md): Technical architecture details
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Ethical Considerations
 
-## Deploying To Production
+Fresh Leads Pro is designed to ethically gather publicly available information:
 
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm run build`   | Build your production site                   |
-| `npm run preview` | Preview your build locally, before deploying |
-| `npm run deploy`  | Deploy your production site to Cloudflare    |
+- Only scrapes public databases and directories
+- Respects robots.txt directives
+- Uses rate limiting to avoid server strain
+- Does not scrape private residential-only lists unless tied to a public service
+- Provides value to both service providers and potential customers
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is proprietary software.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For support inquiries, please contact support@freshleadspro.com

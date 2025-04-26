@@ -1,0 +1,65 @@
+Project Name: Fresh Leads Pro
+
+Goal:
+Create a web app that provides small service businesses (plumbers, landscapers, electricians, cleaners, etc.) with fast, easy access to updated local leads. The SaaS will gather publicly available data from various sources (business registrations, property records, public directories) and organize it by category.
+
+Purpose:
+Help service businesses find fresh opportunities — whether that’s homes, churches, mosques, schools, new businesses, or nonprofits — that need their services. Offer affordable access to thousands of leads, updated frequently.
+
+Key Features:
+
+Clean dashboard login for subscribers.
+
+Leads categorized by:
+
+Customer type (homeowner, church, mosque, restaurant, etc.)
+
+City and State.
+
+Search, filter, and download lead lists.
+
+Leads must include: Organization or Property Name, Category, Phone Number, Address, Email (if available).
+
+Payment subscription system (weekly or monthly).
+
+Admin dashboard to manage scraping and uploads.
+
+Web scraper module targeting public databases only (property appraiser sites, new business license registries, chamber of commerce directories, etc.).
+
+NO scraping private residential-only lists unless tied to a public service (homeowners association, rental property, public record).
+
+Slow, respectful scraping to avoid bans.
+
+Design Style:
+
+Light, modern, professional look (white background, soft blues/greens).
+
+Big action buttons: "Browse Leads," "Download CSV," "Upgrade Plan."
+
+Trust and simplicity emphasized.
+
+Bonus Ideas (Optional Future Features):
+
+"Hot Leads" section (new homeowners, recent property sales)
+
+Email campaign integration (simple email templates to reach leads)
+
+Lead scoring (rank leads by freshness or size of property)
+
+Data Collection Focus:
+
+Property owners
+
+Religious organizations
+
+Small businesses
+
+New startups
+
+Rental property managers
+
+Nonprofits
+
+Schools and daycare centers
+
+Event venues
